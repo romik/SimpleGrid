@@ -113,7 +113,7 @@
 {
     CGFloat sum=0;
     for (NSNumber *num in columns) {
-        sum=sum+num.floatValue+columnpadding;
+        sum=sum+num.floatValue+(2*columnpadding);
     }      
         
     return sum;
@@ -151,12 +151,12 @@
     for(NSNumber *num in alltags)
     {
         UIView *view =[self viewWithTag:num.integerValue];
-        x= view.frame.origin.x + view.frame.size.width;
+        x= view.frame.origin.x + view.frame.size.width + columnpadding;
         CGContextMoveToPoint(ctx, x, 0);
         CGContextAddLineToPoint(ctx, x, self.bounds.size.height);
-        int x1= view.frame.origin.x;;
-        CGContextMoveToPoint(ctx, x1, 0);
-        CGContextAddLineToPoint(ctx, x1, self.bounds.size.height);
+        //int x1= view.frame.origin.x - columnpadding;
+        //CGContextMoveToPoint(ctx, x1, 0);
+        //CGContextAddLineToPoint(ctx, x1, self.bounds.size.height);
     }
     
     CGContextStrokePath(ctx);
@@ -225,55 +225,6 @@
     
 }
 
-/*- (void)willTransitionToState:(UITableViewCellStateMask)state
-{
-    [super willTransitionToState:state];
-    
-    if ((state & UITableViewCellStateShowingDeleteConfirmationMask) == UITableViewCellStateShowingDeleteConfirmationMask)
-    {
-        for (UIView *subview in self.subviews)
-        {
-            if ([NSStringFromClass([subview class]) isEqualToString:@"UITableViewCellDeleteConfirmationControl"])
-            {
-               // UIImageView *deleteBtn = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 64, 33)];
-               // [deleteBtn setImage:[UIImage imageNamed:@"post"]];
-               // [[subview.subviews objectAtIndex:0] addSubview:deleteBtn];
-                
-                //[[subview.subviews objectAtIndex:0] addSubview:nil];
 
-           }
-        }
-        UIView * backCellView = [[UIView alloc]initWithFrame:CGRectMake(620,0,300,rowheight-4)];
-        backCellView.backgroundColor = [UIColor redColor];
-        [[self.subviews objectAtIndex:0] addSubview:backCellView] ;
-        [self bringSubviewToFront:backCellView];
-//       UIImage *img1 = [UIImage imageNamed:@"post.png"];
-//        UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [btn1 setImage:img1 forState:UIControlStateNormal];
-//        [btn1 addTarget:self action:@selector(Test) forControlEvents:UIControlEventTouchUpInside];
-//        UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-//        if((orientation == UIInterfaceOrientationLandscapeLeft) || (orientation == UIInterfaceOrientationLandscapeRight))
-//        {
-//        btn1.frame = CGRectMake(0,0,103,39);
-//        }
-//        else
-//        {
-//            btn1.frame = CGRectMake(620,3,75,34);
-//        }
-//        btn1.tag=101;
-//        [[self.subviews objectAtIndex:0] addSubview:btn1];
-    }
-}
-
--(void) Test
-{
-    NSLog(@"Clicked");
-    UIButton *btn1= (UIButton *)[self viewWithTag:101];
-    if(btn1)
-    {
-        [btn1 removeFromSuperview];
-    }
-}
-*/
 
 @end

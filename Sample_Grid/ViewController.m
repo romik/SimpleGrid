@@ -50,17 +50,17 @@
         arrayData = [[NSMutableArray alloc] init];
     }
     [arrayData removeAllObjects];
-    for(int i=0;i<10;i++)
+    for(int i=0;i<20;i++)
     {
         Data1 *obj = [[Data1 alloc] init];
-        obj.col1 = [NSString stringWithFormat:@"Col1-%d", i];
-        obj.col2 = [NSString stringWithFormat:@"Col2-%d", i];
-        obj.col3 = [NSString stringWithFormat:@"Col3-%d", i];
-        obj.col4 = [NSString stringWithFormat:@"Col4-%d", i];
-        obj.col5 = [NSString stringWithFormat:@"Col5-%d", i];
-        obj.col6 = [NSString stringWithFormat:@"Col6-%d", i];
-        obj.col7 = [NSString stringWithFormat:@"Col7-%d", i];
-        obj.col8 = [NSString stringWithFormat:@"Col8-%d", i];
+        obj.col1 = [NSString stringWithFormat:@"Col 1 - Row %d", i];
+        obj.col2 = [NSString stringWithFormat:@"Col 2 - Row %d", i];
+        obj.col3 = [NSString stringWithFormat:@"Col 3 - Row %d", i];
+        obj.col4 = [NSString stringWithFormat:@"Col 4 - Row %d", i];
+        obj.col5 = [NSString stringWithFormat:@"Col 5 - Row %d", i];
+        obj.col6 = [NSString stringWithFormat:@"Col 6 - Row %d", i];
+        obj.col7 = [NSString stringWithFormat:@"Col 7 - Row %d", i];
+        obj.col8 = [NSString stringWithFormat:@"Col 8 - Row %d", i];
         [arrayData addObject:obj];
         
     }
